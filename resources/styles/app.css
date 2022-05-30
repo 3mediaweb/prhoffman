@@ -1,0 +1,203 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: rgba(0 0 0 / 73%) 0 3px 6px;
+  }
+}
+
+.grad-diag-blue {
+  background: linear-gradient(137deg, rgb(23 81 147 / 100%) 0%, rgb(0 107 157 / 100%) 100%);
+}
+
+.poly-clip {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.parallax-image-holder {
+  will-change: transform;
+  backface-visibility: hidden;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.tb-300 a {
+  @apply text-blue-300;
+}
+
+.cb p,
+.cb ul,
+.cb ol {
+  @apply mb-5;
+}
+
+.cb h2 {
+  @apply mb-1 font-bold;
+}
+
+.cb ul {
+  @apply pl-5;
+  list-style-type: square;
+}
+
+.cb ul li::marker {
+  @apply text-coral;
+}
+
+.cb ul ul li {
+  list-style-type: '\2013\00a0';
+}
+
+.cb strong {
+  @apply text-[#000103];
+}
+
+.cb a:not(.button) {
+  @apply text-coral;
+}
+
+.cb a:not(.button):hover {
+  @apply underline;
+}
+
+.info-open {
+  @apply -rotate-90;
+}
+
+.product-nav::after {
+  @apply w-5 h-1 bg-blue-500 content-[''] block;
+}
+
+.prod-hero-grad {
+  background-image: url("../images/product-hero-lineart.png");
+}
+
+.custom-form .gform_wrapper.gravity-theme input[type='text'],
+.custom-form .gform_wrapper.gravity-theme input[type='email'],
+.custom-form .gform_wrapper.gravity-theme input[type='tel'],
+.custom-form textarea,
+.custom-form select  {
+  @apply px-2 py-1 border-t-0 border-b border-l-0 border-r-0 border-coral;
+}
+
+.custom-form .ginput_container:after {
+  @apply block mb-5 bg-coral;
+  content: '';
+  width: 42px;
+  height: 4px;
+}
+
+.custom-form .gform_wrapper.gravity-theme .gfield textarea.large {
+  @apply h-[60px];
+}
+
+.custom-form .ginput_container_textarea.ginput_container:after {
+  margin-top: -6px;
+}
+
+.custom-form .gform_wrapper .gfield_required {
+  @apply text-gray-900;
+}
+
+.custom-form .gform_wrapper.gravity-theme .gfield_label {
+  @apply mb-0 font-normal text-gray-900;
+}
+
+.modal .gform_button,
+.custom-form .gform_button {
+  @apply inline-flex items-center justify-center px-5 py-3 text-sm font-semibold leading-tight text-center text-white uppercase duration-300 transform border border-transparent hover:bg-blue-800 bg-coral hover:text-blue-400 hover:cursor-pointer;
+}
+
+.custom-form .ginput_right,
+.custom-form .ginput_left {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+}
+
+.gform_wrapper.gravity-theme .ginput_container_address span {
+  width: 100% !important;
+  flex: none !important;
+}
+
+.custom-form #input_1_13_4_label,
+.custom-form #input_1_14_6_label {
+  @apply hidden;
+}
+
+.nav li {
+  @apply text-sm;
+}
+
+.nav li > a {
+  @apply border-b-[4px] border-transparent px-4 nav:pt-7 nav:pb-8 mb-2 block nav:inline;
+}
+
+@screen nav {
+  .nav li.hover > a:hover,
+  .nav li.current-menu-item a {
+    @apply bg-coral bg-opacity-[35%] border-b-[4px] border-coral;
+  }
+}
+
+.sub-menu {
+  @apply nav:absolute nav:h-0 mb-2 nav:mb-0 nav:bg-[#0084B5] nav:opacity-0 nav:min-w-[200px] nav:shadow font-normal nav:font-bold z-40 top-[80px] pointer-events-none;
+}
+
+.sub-menu li a {
+  @apply block px-4 py-1 border-b border-[#258AAF] border-opacity-50 nav:border-opacity-100 mb-0;
+}
+
+.sub-menu li.inset a {
+  @apply pl-8 mb-0;
+}
+
+@screen nav {
+  .sub-menu li a:hover {
+    @apply bg-white bg-opacity-[35%] border-b border-[#258AAF];
+  }
+}
+
+.menu-item-has-children:hover > .sub-menu {
+  @apply h-auto opacity-[95%] pointer-events-auto;
+}
+
+.gm-style .gm-style-iw-c {
+  @apply text-white bg-black;
+  padding: 15px !important;
+}
+
+.gm-style .gm-style-iw-t::after {
+  background: black
+}
+
+.wpgmza_infowindow_address {
+  @apply hidden;
+}
+
+.gm-style-iw-d {
+  overflow: hidden !important;
+}
+
+.entry-summary a {
+  @apply text-coral;
+}
+
+.menu-item-gtranslate select {
+  @apply pt-0 pl-4 pr-0 text-sm bg-black border-none nav:pl-4 hover:cursor-pointer focus:outline-none;
+  background-image: none;
+}
+
+.modal h2.gform_title {
+  @apply mb-4 text-2xl font-semibold uppercase text-purple;
+}
+
+.modal .gform_description {
+  @apply mb-3;
+}
+
+[x-cloak] {
+  display: none !important;
+}
