@@ -21,6 +21,7 @@
       </div>
       <div>
         <?php next_post_link('%link','Next Post'); ?>
+
       </div>
     </div>
   </div>
