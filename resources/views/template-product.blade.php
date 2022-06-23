@@ -28,9 +28,9 @@
           <h1 class="text-white font-semibold uppercase text-[2.375rem] text-shadow border-l-4 border-coral pl-5 leading-tight"><?php echo $series_name; ?></h1>
         </div>
         <?php if (get_row_index() == 1 ) : ?>
-        <div class="px-5 mt-10 mx-auto max-w-7xl">
+        <div class="px-5 mx-auto mt-10 max-w-7xl">
           <a href="#servo-rs-series" class="text-white font-semibold uppercase text-[2.375rem] text-shadow border-l-4 border-coral pl-5 leading-tight">Servo RS Series</a>
-        </div>  
+        </div>
         <?php endif; ?>
       </div>
     </div>
@@ -140,7 +140,7 @@
                 on click
                   wait 0.1s then send open to #form<?php echo $product_slug; ?>
                 "
-                class="bg-[#BFC1C3] button py-2 pl-5 pr-10 mt-5 inline-block text-white uppercase font-bold">Download Brochure</button>
+                class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold">Download Brochure</button>
             <?php endif; ?>
           </div>
         </div>

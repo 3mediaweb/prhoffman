@@ -14,5 +14,6 @@
     <div class="mt-3 font-semibold text-gray-600 cb">
       @php(the_content())
     </div>
+    <a class="inline-flex items-center justify-center px-5 py-3 leading-tight text-center text-sm uppercase border font-semibold border-[#BFC1C3] hover:border-gray-600 transform duration-300 hover:bg-coral hover:bg-opacity-50 hover:text-coral text-coral" href="{{ get_permalink() }}">Read Full Post</a>
   </div>
 </article>

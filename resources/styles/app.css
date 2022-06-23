@@ -201,3 +201,7 @@
 [x-cloak] {
   display: none !important;
 }
+
+.nxt_pre a {
+  @apply bg-[#BFC1C3] button py-2 px-5 mt-5 text-center block text-white uppercase font-bold;
+}
