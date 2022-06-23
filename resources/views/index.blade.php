@@ -2,7 +2,7 @@
 
 @section('content')
 <?php $bg = get_field('news_hero_image', 200); ?>
-<section class="bg-center bg-cover h-[300px] md:h-[500px]" style="background-image: url(<?php echo $bg; ?>);">
+<section class="bg-center bg-cover h-[300px] md:h-[480px]" style="background-image: url(<?php echo $bg; ?>);">
   <div class="h-full bg-gradient-to-b from-black">
     <div class="h-full bg-no-repeat bg-contain" style="background-image: url(@asset('assets/images/product-hero-lineart.png')); background-size: 454px 338px;">
       <div class="px-5 <?php if (get_row_index() == 1 ) : ?>pt-32<?php else : ?>py-16<?php endif; ?> mx-auto max-w-7xl">
@@ -28,7 +28,9 @@
     @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
   @endwhile
 
-  {!! get_the_posts_navigation() !!}
+  <div class="flex justify-center my-10">
+    <?php wp_pagenavi(); ?>
+  </div>
 
   </div>
 @endsection

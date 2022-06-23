@@ -205,3 +205,21 @@
 .nxt_pre a {
   @apply bg-[#BFC1C3] button py-2 px-5 mt-5 text-center block text-white uppercase font-bold;
 }
+
+.wp-pagenavi {
+  @apply font-bold;
+}
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+  @apply border-none;
+}
+
+.wp-pagenavi span.current {
+  @apply text-coral;
+}
+
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink {
+  @apply uppercase;
+}

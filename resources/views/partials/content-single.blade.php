@@ -14,6 +14,7 @@
     <div class="mt-3 font-semibold text-gray-600 cb">
       @php(the_content())
     </div>
+    <div class="block px-5 py-1 mb-5 font-semibold text-white uppercase bg-coral">More Posts</div>
     <div class="grid grid-cols-2 gap-20 nxt_pre">
       <div>
         <?php previous_post_link('%link','Previous Post'); ?>
