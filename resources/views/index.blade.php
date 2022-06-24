@@ -28,7 +28,7 @@
     @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
   @endwhile
 
-  <div class="flex justify-center my-10">
+  <div class="flex justify-center pt-5 my-10 border-t-2 border-t-coral">
     <?php wp_pagenavi(); ?>
   </div>
 
