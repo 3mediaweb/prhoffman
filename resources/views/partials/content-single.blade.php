@@ -14,13 +14,21 @@
     <div class="mt-3 font-semibold text-gray-600 cb">
       @php(the_content())
     </div>
-    <div class="block px-5 py-1 mt-10 mb-5 font-semibold text-white uppercase bg-coral">More Posts</div>
+    <div class="block px-5 py-1 mt-12 mb-5 font-semibold text-white uppercase bg-coral">More Posts</div>
+    <?php
+      $prev_post = get_adjacent_post('', '', true);
+      $next_post = get_adjacent_post('', '', false);
+    ?>
     <div class="grid grid-cols-2 gap-20 nxt_pre">
       <div>
         <?php previous_post_link('%link','Previous Post'); ?>
+        <p class="px-5 mt-3 font-bold uppercase"><?php echo $prev_post->post_title; ?></p>
+        <p class="px-5"><?php the_field('blog_subheading', $prev_post->ID); ?></p>
       </div>
       <div>
         <?php next_post_link('%link','Next Post'); ?>
+        <p class="px-5 mt-3 font-bold uppercase"><?php echo $next_post->post_title; ?></p>
+        <p class="px-5"><?php the_field('blog_subheading', $next_post->ID); ?></p>
       </div>
     </div>
   </div>
