@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 <?php $bg = get_field('news_hero_image', 200); ?>
-<section class="bg-center bg-cover min-h-[225px]" <?php if ($bg) : ?>style="background-image: url(<?php echo $bg; ?>);"<?php endif; ?>>
+<section class="bg-center bg-cover min-h-[225px] pb-20" <?php if ($bg) : ?>style="background-image: url(<?php echo $bg; ?>);"<?php endif; ?>>
   <div class="h-full bg-gradient-to-b from-black">
     <div class="h-full bg-no-repeat bg-contain" style="background-image: url(@asset('assets/images/product-hero-lineart.png')); background-size: 454px 338px;">
       <div class="px-5 <?php if (get_row_index() == 1 ) : ?>pt-32<?php else : ?>py-16<?php endif; ?> mx-auto max-w-7xl">
