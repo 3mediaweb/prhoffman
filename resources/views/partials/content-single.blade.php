@@ -22,13 +22,17 @@
     <div class="grid grid-cols-2 gap-20 nxt_pre">
       <div>
         <?php previous_post_link('%link','Previous Post'); ?>
+        <?php if ($prev_post) : ?>
         <p class="px-5 mt-3 font-bold uppercase"><?php echo $prev_post->post_title; ?></p>
         <p class="px-5"><?php the_field('blog_subheading', $prev_post->ID); ?></p>
+        <?php endif; ?>
       </div>
       <div>
         <?php next_post_link('%link','Next Post'); ?>
+        <?php if ($next_post) : ?>
         <p class="px-5 mt-3 font-bold uppercase"><?php echo $next_post->post_title; ?></p>
         <p class="px-5"><?php the_field('blog_subheading', $next_post->ID); ?></p>
+        <?php endif; ?>
       </div>
     </div>
   </div>

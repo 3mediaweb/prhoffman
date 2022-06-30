@@ -12,7 +12,9 @@
     <h3 class="font-semibold text-gray-600"><?php the_field('blog_subheading'); ?></h3>
     <?php endif; ?>
     <div class="mt-3 font-semibold text-gray-600 cb">
-      @php(the_content())
+      <?php if ( get_field('blog_teaser') ): ?>
+        <?php the_field('blog_teaser'); ?>
+      <?php endif; ?>
     </div>
     <a class="inline-flex items-center justify-center px-5 py-3 leading-tight text-center text-sm uppercase border font-semibold border-[#BFC1C3] hover:border-gray-600 transform duration-300 hover:bg-coral hover:bg-opacity-50 hover:text-coral text-coral" href="{{ get_permalink() }}">Read Full Post</a>
   </div>
