@@ -5,10 +5,13 @@
         <img class="w-[294px] self-start pr-8" alt="PR Hoffman" src="@asset('assets/images/logo.png')" />
       </div>
       <div class="flex justify-center mb-5 md:justify-end">
-        <img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Intersurface Dynamics" src="@asset('assets/images/logo-id.png')" />
+        <a href="https://www.isurface.com"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Intersurface Dynamics" src="@asset('assets/images/logo-id.png')" /></a>
+      </div>
+      <div class="flex justify-center mb-5 md:justify-end">
+        <a href="https://www.amtechsystems.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Amtech Group" src="@asset('assets/images/amtech-group.png')" /></a>
       </div>
       <div class="flex justify-center md:justify-end">
-        <img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Amtech Group" src="@asset('assets/images/amtech-group.png')" />
+        <a href="https://www.btu.com/"><img class="w-[210px] self-start pt-5 pr-10 border-t-2 border-coral" alt="BTU" src="@asset('assets/images/logo-BTU.png')" /></a>
       </div>
     </div>
   </div>
