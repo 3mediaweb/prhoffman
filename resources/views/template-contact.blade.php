@@ -77,8 +77,8 @@
   </div>
 
 
-  <div class="grid grid-cols-1 text-gray-600 md:grid-cols-2 cb scroll-mt-20" id="careers">
-    <div class="flex">
+  <div class="grid grid-cols-1 text-gray-600 md:grid-cols-2 scroll-mt-20" id="careers">
+    <div class="flex cb">
       <div class="w-1/2 py-10 px-5 text-lg md:text-[1.375rem] leading-loose items-end pr-10 bg-[#AAA29F] bg-opacity-[15%]">
         <div class="flex flex-col w-full max-w-[350px] mr-0 ml-auto">
           <h2><?php the_field('contact_values_heading'); ?></h2>
