@@ -58,7 +58,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2">
           <?php $bg = get_sub_field('company_bi_image'); ?>
           <div class="h-[300px] md:h-auto bg-center bg-cover <?php if ( get_sub_field('company_bi_image_alignment') == 'right' ) : ?> md:order-2<?php endif; ?>" style="background-image: url('<?php echo $bg; ?>')"></div>
-          <div class="p-14 cb">
+          <div class="p-14">
             <?php if( have_rows('buttons') ): ?>
                 <?php while( have_rows('buttons') ): the_row();
                     $link = get_sub_field('button');
