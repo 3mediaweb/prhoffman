@@ -7,10 +7,10 @@
       <?php if( get_row_layout() == 'parallax_group' ): ?>
         <div class="relative overflow-hidden min-h-[500px]">
           <div class="py-20 md:h-[60vh] min-h-[400px] md:min-h-[500px] relative">
-            <div class="absolute top-0 left-0 w-full h-full poly-clip will-change-transform">
-              <div class="h-[400px] z-10 absolute top-0 w-full opacity-90" style="background-image: linear-gradient(to top,rgba(13,22,35,0),#0d1623);"></div>
-              <div class="fixed top-0 left-0 block w-full h-full bg-center bg-purple z-[1] parallax-image-holder" style="background-image: url('<?php the_sub_field('pg_top_image'); ?>'); background-size: cover"></div>
-              <div class="relative z-10 px-5 pt-40 m-auto max-w-7xl">
+            <div class="absolute top-0 left-0 w-full h-full poly-clip">
+              <div class="will-change-transform h-[400px] z-10 absolute top-0 w-full opacity-90" style="background-image: linear-gradient(to top,rgba(13,22,35,0),#0d1623);"></div>
+              <div class="will-change-transform fixed top-0 left-0 block w-full h-full bg-center bg-purple z-[1] parallax-image-holder" style="background-image: url('<?php the_sub_field('pg_top_image'); ?>'); background-size: cover"></div>
+              <div class="relative z-10 px-5 pt-40 m-auto will-change-transform max-w-7xl">
                 <?php if (get_sub_field('make_h1')) : ?><h1><?php else : ?><h2><?php endif; ?>
                   <span class="uppercase text-white text-2xl md:text-[2.375rem] text-shadow-lg leading-8 md:leading-10 pl-5 border-l-4 border-blue-300 inline-block font-semibold"><?php the_sub_field('pg_top_text'); ?></span>
                 <?php if (get_sub_field('make_h1')) : ?></h1><?php else : ?></h2><?php endif; ?>
@@ -19,8 +19,8 @@
           </div>
           <div class="relative py-10 text-white md:py-20">
             <div class="h-full overflow-hidden">
-              <div class="absolute top-0 left-0 z-0 w-full h-full poly-clip will-change-transform">
-                <div class="fixed top-0 block w-full h-full bg-center bg-cover bg-purple z-[-1] parallax-image-holder" style="background-image: url('<?php the_sub_field('pg_bottom_image'); ?>');"></div>
+              <div class="absolute top-0 left-0 z-0 w-full h-full poly-clip">
+                <div class="will-change-transform fixed top-0 block w-full h-full bg-center bg-cover bg-purple z-[-1] parallax-image-holder" style="background-image: url('<?php the_sub_field('pg_bottom_image'); ?>');"></div>
               </div>
               <div class="relative h-full px-5 m-auto overflow-hidden max-w-7xl">
                 <div class="uppercase text-white text-lg md:text-[1.3125rem] mb-2">
