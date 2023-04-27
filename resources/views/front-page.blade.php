@@ -22,7 +22,7 @@
               <div class="absolute top-0 left-0 z-0 w-full h-full poly-clip">
                 <div class="will-change-transform fixed top-0 block w-full h-full bg-center bg-cover bg-purple z-[-1] parallax-image-holder" style="background-image: url('<?php the_sub_field('pg_bottom_image'); ?>');"></div>
               </div>
-              <div class="relative h-full px-5 m-auto overflow-hidden max-w-7xl">
+              <div class="relative h-full px-5 m-auto overflow-hidden max-w-7xl will-change-transform">
                 <div class="uppercase text-white text-lg md:text-[1.3125rem] mb-2">
                   <?php the_sub_field('pg_bottom_small_heading'); ?>
                 </div>
