@@ -7,7 +7,7 @@
       <?php if( get_row_layout() == 'parallax_group' ): ?>
         <div class="relative overflow-hidden min-h-[500px]">
           <div class="py-20 md:h-[60vh] min-h-[400px] md:min-h-[500px] relative">
-            <div class="absolute top-0 left-0 w-full h-full poly-clip">
+            <div class="absolute top-0 left-0 w-full h-full poly-clip will-change-transform">
               <div class="h-[400px] z-10 absolute top-0 w-full opacity-90" style="background-image: linear-gradient(to top,rgba(13,22,35,0),#0d1623);"></div>
               <div class="fixed top-0 left-0 block w-full h-full bg-center bg-purple z-[1] parallax-image-holder" style="background-image: url('<?php the_sub_field('pg_top_image'); ?>'); background-size: cover"></div>
               <div class="relative z-10 px-5 pt-40 m-auto max-w-7xl">
@@ -19,7 +19,7 @@
           </div>
           <div class="relative py-10 text-white md:py-20">
             <div class="h-full overflow-hidden">
-              <div class="absolute top-0 left-0 z-0 w-full h-full poly-clip">
+              <div class="absolute top-0 left-0 z-0 w-full h-full poly-clip will-change-transform">
                 <div class="fixed top-0 block w-full h-full bg-center bg-cover bg-purple z-[-1] parallax-image-holder" style="background-image: url('<?php the_sub_field('pg_bottom_image'); ?>');"></div>
               </div>
               <div class="relative h-full px-5 m-auto overflow-hidden max-w-7xl">
