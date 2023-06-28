@@ -116,7 +116,7 @@
   <div class="flex flex-wrap">
 
     <div class="w-full text-white bg-center md:bg-right bg-no-repeat <?php if ( get_sub_field('wysiwyg_background_image') ) : ?>bg-cover <? else : ?>bg-contain <?php endif; ?> "
-      style="<?php if (get_sub_field('background_overlay')) : echo('background-color: grey; background-blend-mode: multiply;'); endif; ?> background-image: url('<?php the_sub_field('wysiwyg_background_image'); ?>');<?php if (get_sub_field('wysiwyg_background_color') ) : ?>background: '<?php the_sub_field('wysiwyg_background_color'); endif; ?>';">
+      style="<?php if (get_sub_field('background_overlay')) : echo('background-color: grey; background-blend-mode: multiply;'); endif; ?> <?php if (get_sub_field('wysiwyg_background_image') ) : ?>background-image: url('<?php the_sub_field('wysiwyg_background_image'); ?>'); <?php endif; ?><?php if (get_sub_field('wysiwyg_background_color') ) : ?>background-color:<?php the_sub_field('wysiwyg_background_color'); endif; ?>;">
       <div class="relative h-full px-5 m-auto overflow-hidden max-w-7xl will-change-transform">
       <span class="inline-block w-10 h-[4px] bg-blue-500 mb-5"></span>
 
