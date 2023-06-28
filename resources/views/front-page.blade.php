@@ -108,9 +108,6 @@
         </div>
     </div>
 </div>
-
-
-<!--start my stuff -->
 <?php elseif( get_row_layout() == 'simple_wysiwyg' ): ?>
 <div class="grid grid-cols-1 md:grid-cols-1">
   <div class="flex flex-wrap">
@@ -130,12 +127,10 @@
    
 
     </div>
-  </div>
-        
+  </div> 
       </div>
   </div>
 </div>
-<!-- end my stuff -->
 <?php  endif; ?>
 <?php endwhile; ?>
 <?php endif; ?>
