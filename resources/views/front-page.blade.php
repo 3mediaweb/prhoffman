@@ -118,7 +118,7 @@
    
 
 
-      <div class="relative pt-20 pb-10">
+      <div class="relative pt-10 pb-10">
                  
                   <div class="text-xl md:text-[1.375rem] mb-10">
             <?php the_sub_field('simple_wysisyg_content'); ?>

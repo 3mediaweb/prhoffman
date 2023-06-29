@@ -10,6 +10,7 @@
 <?php $url = "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"; ?>
 <?php if( have_rows('product_series') ): ?>
   <?php while( have_rows('product_series') ): the_row();
+  
     $series_name = get_sub_field('product_series_name');
     $series_slug = sanitize_title($series_name);
     $series_overview = get_sub_field('product_series_overview');

@@ -5,12 +5,9 @@
 <div class="flex flex-wrap scroll-mt-20">
     <div class="md:p-10 md:pt-10 bg-white md:w-1/3 px-5 text-center <?php if (get_row_index() != 1 ) : ?>md:border-t-[11px] md:border-[#DBDBDB]<?php endif; ?>">
     <?php
-     
-      $image = get_field('product_feature_image');
-      $size = 'full'; // (thumbnail, medium, large, full or custom size)
-      if( $image ) {
-          echo wp_get_attachment_image( $image, $size );
-      }
+
+the_post_thumbnail( 'medium_large' ); 
+
     ?>
      <div class="w-full pt-5 md:px-10 md:pt-12 md:flex-1">
         <div class="w-full pt-5 md:px-10 md:pt-12 md:flex-1">
