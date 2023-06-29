@@ -1,14 +1,25 @@
 <?php 
- $product_name = get_field('product_name');
+ $product_name = get_the_title();
     $product_slug = sanitize_title($product_name);
     ?>
 <div class="flex flex-wrap scroll-mt-20">
     <div class="md:p-10 md:pt-10 bg-white md:w-1/3 px-5 text-center <?php if (get_row_index() != 1 ) : ?>md:border-t-[11px] md:border-[#DBDBDB]<?php endif; ?>">
     <?php
 
-the_post_thumbnail( 'medium_large' ); 
+// Give the Post Thumbnail a class "alignleft".
+
+echo get_the_post_thumbnail( get_the_ID(), 'medium', array( 'class' => 'alignleft' ) );
 
     ?>
+
+<?php
+
+$image = get_the_post_thumbnail( 'medium_large' ); 
+$size = 'full'; // (thumbnail, medium, large, full or custom size)
+if( $image ) {
+    echo wp_get_attachment_image( $image, $size );
+}
+?>
      <div class="w-full pt-5 md:px-10 md:pt-12 md:flex-1">
         <div class="w-full pt-5 md:px-10 md:pt-12 md:flex-1">
             <?php 
@@ -62,13 +73,15 @@ the_post_thumbnail( 'medium_large' );
     </div>
 </div>
   </div> 
+</div>
+</div>
   <?php 
           $section_heading = get_field('section_heading');
         
         ?>
-        <div class="flex flex-wrap mb-10">
-          <div class="hidden bg-white md:block md:w-1/3"></div>
-          <div class="w-full md:w-2/3">
+        <div class="flex flex-wrap mb-10" style="padding: 2rem;">
+          <div class="hidden bg-white md:block"></div>
+          <div class="w-full">
             <?php if ($section_heading) : ?>
             <h2 class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3"> <?php echo $section_heading; ?></h2>
             <?php endif; ?>
@@ -114,13 +127,13 @@ if( have_rows('single_product_flexible_content') ):
                 <?php endif; ?>
 
                 <?php endif; ?>
-        </div>
+              </div>
       
 <?php 
   
     endwhile;
    
 endif;?>
-  </div>
+
 
 
