@@ -96,6 +96,10 @@ if( have_rows('single_product_flexible_content') ):
                 <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb md:pl-20 md:max-w-3xl">
                   <?php the_sub_field('text'); ?>
                 </div>
+                <?php elseif( get_row_layout() == 'flex_section_heading' ): ?>
+                <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb md:pl-20 md:max-w-3xl">
+                  <h2 class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3"><?php the_sub_field('section_heading'); ?></h2>
+                </div>
                 <?php elseif( get_row_layout() == 'image' ):
                 $image = get_sub_field('image');
                 $alignment = get_sub_field('image_alignment');
