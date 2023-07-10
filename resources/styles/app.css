@@ -9,7 +9,11 @@
 }
 
 .grad-diag-blue {
-  background: linear-gradient(137deg, rgb(23 81 147 / 100%) 0%, rgb(0 107 157 / 100%) 100%);
+  background: linear-gradient(
+    137deg,
+    rgb(23 81 147 / 100%) 0%,
+    rgb(0 107 157 / 100%) 100%
+  );
 }
 
 .poly-clip {
@@ -71,14 +75,14 @@
 }
 
 .prod-hero-grad {
-  background-image: url("../images/product-hero-lineart.png");
+  background-image: url('../images/product-hero-lineart.png');
 }
 
 .custom-form .gform_wrapper.gravity-theme input[type='text'],
 .custom-form .gform_wrapper.gravity-theme input[type='email'],
 .custom-form .gform_wrapper.gravity-theme input[type='tel'],
 .custom-form textarea,
-.custom-form select  {
+.custom-form select {
   @apply px-2 py-1 border-t-0 border-b border-l-0 border-r-0 border-coral;
 }
 
@@ -170,7 +174,7 @@
 }
 
 .gm-style .gm-style-iw-t::after {
-  background: black
+  background: black;
 }
 
 .wpgmza_infowindow_address {
@@ -222,4 +226,63 @@
 .wp-pagenavi .previouspostslink,
 .wp-pagenavi .nextpostslink {
   @apply uppercase;
+}
+
+/* new product pages css added june/july 2023 */
+.product-category-grid {
+  display: grid;
+  grid-gap: 2.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+}
+.product-category-grid article {
+  background: #f1f0f0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.product-page-intro {
+  color: #fff;
+  padding: 2rem 1rem;
+}
+.product-page-intro h2 {
+  text-transform: uppercase;
+}
+.product-page-intro p {
+  margin: 1.3rem 0;
+  font-size: 1.3rem;
+}
+.product-page-intro span {
+  color: #00aeef;
+}
+.product-image {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.product-detail-list {
+  margin: 1.2rem;
+  list-style-type: none;
+}
+.product-detail-list li::before {
+  content: '\25a0';
+  color: #00aeef;
+  position: relative;
+  top: -1px;
+}
+a.product-link {
+  margin-bottom: 1.2rem;
+  color: rgba(21, 61, 147, 1);
+}
+.alignright {
+  float: right;
+  margin: 1rem;
+}
+.alignleft {
+  float: left;
+  margin: 1rem;
 }
