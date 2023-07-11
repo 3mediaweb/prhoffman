@@ -75,22 +75,23 @@ if( $image ) {
   </div> 
 </div>
 </div>
+
   <?php 
           $section_heading = get_field('section_heading');
         
         ?>
-        <div class="flex flex-wrap mb-10">
+
           <div class="hidden bg-white md:block"></div>
-          <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb ">
+       
             <?php if ($section_heading) : ?>
            
-            <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb ">
+            <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb md:max-w-6xl" style="margin: auto;">
               <h2 class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3"><?php echo $section_heading ?></h2>
             </div>
-            
+     
      
             <?php endif; ?>
-          </div></div>
+       
         <?php
 
 if( have_rows('single_product_flexible_content') ):
@@ -98,11 +99,11 @@ if( have_rows('single_product_flexible_content') ):
     while ( have_rows('single_product_flexible_content') ) : the_row();
 ?>
         <?php if( get_row_layout() == 'text' ): ?>
-                <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb md:pl-20">
+                <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb md:max-w-6xl" style="margin: auto; ">
                   <?php the_sub_field('text'); ?>
                 </div>
                 <?php elseif( get_row_layout() == 'flex_section_heading' ): ?>
-                <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb md:pl-20">
+                <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb md:max-w-6xl" style="margin: auto; ">
                   <h2 class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3"><?php the_sub_field('section_heading'); ?></h2>
                 </div>
                 <?php elseif( get_row_layout() == 'image' ):
@@ -133,14 +134,16 @@ if( have_rows('single_product_flexible_content') ):
                     $link_target = $link['target'] ? $link['target'] : '_self';
                     ?>
                     <a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+              
                 <?php endif; ?>
+             
+                <?php endif; ?>
+              </div>  
 
-                <?php endif; ?>
-              </div>
       
 <?php 
   
-    endwhile;
+    endwhile; ?> <?php
    
 endif;?>
 
