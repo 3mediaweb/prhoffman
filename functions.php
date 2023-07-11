@@ -35,3 +35,12 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 
 }
+
+function prhoffman_style() {
+    ?>
+<style>
+.product-category-grid{display:grid;grid-gap:2.2rem;grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr))}.product-category-grid article{background:#f1f0f0;display:flex;flex-direction:column;overflow:hidden}.product-page-intro{color:#fff;padding:2rem 1rem}.product-page-intro h2{text-transform:uppercase}.product-page-intro p{margin:1.3rem 0;font-size:1.3rem}.product-page-intro span{color:#00aeef}.product-image{width:100%;padding:0;margin:0;background:#fff;min-height:300px;display:flex;justify-content:center;align-content:center}.product-detail-list{margin:1.2rem;list-style-type:none}.product-detail-list li::before{content:'\25a0';color:#00aeef;position:relative;top:-1px}a.product-link{margin-bottom:1.2rem;color:rgba(21,61,147,1)}.alignright{float:right;margin:1rem}.alignleft{float:left;margin:1rem}
+</style>
+<?php
+}
+add_action('wp_head', 'prhoffman_style');
