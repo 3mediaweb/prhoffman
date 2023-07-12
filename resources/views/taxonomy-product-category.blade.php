@@ -26,26 +26,40 @@ $bg = get_field('hero_image', $product_cat);
 </div>
 
   <div class="px-5 mx-auto max-w-7xl product-category-grid">
-  @if (! have_posts())
+
+  @if (!have_posts())
     <x-alert type="warning">
       {!! __('Sorry, no results were found.', 'sage') !!}
     </x-alert>
 
     {!! get_search_form(false) !!}
   @endif
-
-
-  @while(have_posts()) @php(the_post())
+  @php
+  $term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
+  $all_posts = new WP_Query([
+    'post_type' => 'product',
+    'orderby' => 'title',
+    'order' => 'ASC',
+    'nopaging' => true,
+    'tax_query' => [
+      [
+        'taxonomy' => 'product-category',
+        'field' => 'slug',
+        'terms' => $term->name,
+      ],
+    ],
+  ]);
+  
+  @endphp
+  @while($all_posts->have_posts()) @php($all_posts->the_post())
     @includeFirst(['partials.content-taxonomy-product-category-' . get_post_type(), 'partials.content-taxonomy-product-category'])
   @endwhile
 
  
 
   </div>
- 
-  <div class="flex justify-center pt-5 my-10" style="color: white;">
-    <?php wp_pagenavi(); ?>
-  </div>
- 
+  <?php wp_reset_postdata(); ?>
+  
+
 @endsection
 </div>
