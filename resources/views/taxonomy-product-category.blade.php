@@ -45,7 +45,7 @@ $bg = get_field('hero_image', $product_cat);
       [
         'taxonomy' => 'product-category',
         'field' => 'slug',
-        'terms' => $term->name,
+        'terms' => $term->slug,
       ],
     ],
   ]);
