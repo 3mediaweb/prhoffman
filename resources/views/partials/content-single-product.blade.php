@@ -24,15 +24,21 @@
           if( $capacity_chart_window ): 
           $capacity_chart_button = get_field('capacity_chart_button_text');
           ?>
-          <div class="modal-content-group">
+          <div class="modal-content-group-chart">
             <button class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold button-style-link"
-            id="modal-control">
+            id="modal-control-chart">
         <?echo $capacity_chart_button ?>
     </button>
-    <div id="modal-content"
-                         class="modal fixed top-0 bottom-0 left-0 right-0 z-50 pt-24 bg-black modal bg-opacity-70">
-                        <div class="modal-content-wrap">
-                            <span class="modal-close">&times;</span>
+    <div id="modal-content-chart"
+                         class="modal-chart fixed top-0 bottom-0 left-0 right-0 z-50 pt-24 bg-black modal bg-opacity-70">
+                        <div class="modal-content-wrap relative mx-auto bg-white w-full border-[3px] border-coral rounded-md p-8 pt-10" style="width: 90%;">
+                            <span class="modal-close-chart absolute top-[20px] right-[20px]"><svg width="20"
+                              height="20"
+                              xmlns="http://www.w3.org/2000/svg">
+                             <path d="m17.411 0-7.399 7.399L2.589 0 0 2.589l7.424 7.399L0 17.411 2.589 20l7.423-7.424L17.411 20 20 17.411l-7.399-7.423L20 2.589z"
+                                   fill="#000"
+                                   fill-rule="nonzero" />
+                         </svg></span>
                             <p><?php echo( $capacity_chart_window ); ?></p>
                         </div>
                     </div>
@@ -42,17 +48,37 @@
           <?php endif ?>
 
           <?php
-        $form = get_field('product_brochure_form');
+          $form = get_field('product_brochure_form');
         if( $form ): ?>
-                <button _="
-          on click
-            wait 0.1s then send open to #form<?php echo $product_slug; ?>
-          "
-                        class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold">Download
-                    Brochure</button>
-                <?php endif; ?>
-         </div>
+        <div class="modal-content-group-brochure">
+          <button class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold button-style-link"
+            id="modal-control-brochure">Download Brochure</button>
+            <div id="modal-content-brochure"  class="fixed top-0 bottom-0 left-0 right-0 z-50 hidden pt-24 bg-black modal bg-opacity-70">
+              <div class="relative max-w-[510px] mx-auto bg-white w-full border-[3px] border-coral rounded-md p-8 pt-10">
+                <span class="modal-close-brochure absolute top-[20px] right-[20px]"><svg width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg">
+                 <path d="m17.411 0-7.399 7.399L2.589 0 0 2.589l7.424 7.399L0 17.411 2.589 20l7.423-7.424L17.411 20 20 17.411l-7.399-7.423L20 2.589z"
+                       fill="#000"
+                       fill-rule="nonzero" />
+             </svg></span>
+             <?php gravity_form( $form['id'], true, true, false, '', true, 1 ); ?>
+             <div
+                  class="w-[30px] h-[30px] border-l-[3px] border-b-[3px] border-blue-500 rotate-45 transform rounded-b-md rounded-l-md absolute bottom-0 top-[100px] left-[-18px] bg-white">
+             </div>
+              </div>
+
+            </div>
+
+        </div>
+        
+        <?php endif; ?>
+
+         
+
+ </div>
 </div>
+
 <div class="pl-10 md:pl-20 md:w-2/3 pb-10">
   <h2
   class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3">
@@ -129,31 +155,3 @@
     endwhile; ?> <?php
    
 endif;?>
-
-<div id="form<?php echo $product_slug; ?>"
-  class="fixed top-0 bottom-0 left-0 right-0 z-50 hidden pt-24 bg-black modal bg-opacity-70"
-  _="on open
-     remove .hidden
-   on close or keyup[key is 'Escape'] from <body/>
-     trigger hidden
-     wait 0.1s then add .hidden
-   end
- ">
- <div class="relative max-w-[510px] mx-auto bg-white w-full border-[3px] border-coral rounded-md p-8 pt-10">
-     <button class="absolute top-[20px] right-[20px]"
-             _="on click send close to #form<?php echo $product_slug; ?>">
-         <svg width="20"
-              height="20"
-              xmlns="http://www.w3.org/2000/svg">
-             <path d="m17.411 0-7.399 7.399L2.589 0 0 2.589l7.424 7.399L0 17.411 2.589 20l7.423-7.424L17.411 20 20 17.411l-7.399-7.423L20 2.589z"
-                   fill="#000"
-                   fill-rule="nonzero" />
-         </svg>
-     </button>
-     <?php gravity_form( $form['id'], true, true, false, '', true, 1 ); ?>
-     <div
-          class="hidden w-[30px] h-[30px] border-l-[3px] border-b-[3px] border-blue-500 rotate-45 transform rounded-b-md rounded-l-md absolute bottom-0 top-[100px] left-[-18px] bg-white">
-     </div>
-
- </div>
-</div>
