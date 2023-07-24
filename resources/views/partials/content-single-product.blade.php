@@ -90,12 +90,15 @@
      $section_heading = get_field('section_heading'); 
     ?>
     <div class="hidden bg-white md:block"></div>
+  </div>
+</div>
 
     <?php if ($section_heading) : ?>
         <h2
-            class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3">
+            class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3" style="width: 100%; display: block;">
             <?php echo $section_heading ?></h2>  
     <?php endif; ?>
+    <div class="hidden bg-white md:block"></div>
     <?php
 
     if( have_rows('single_product_flexible_content') ):
@@ -103,14 +106,13 @@
         while ( have_rows('single_product_flexible_content') ) : the_row();
     ?>
     <?php if( get_row_layout() == 'text' ): ?>
-   <div class="p-10 py-10 text-lg leading-6 text-gray-600 cb md:max-w-6xl"
-                 style="margin: auto; ">
+   <div class="p-10 py-10 text-lg leading-6 text-gray-600" style="width: 100%; display: block;">
         <?php the_sub_field('text'); ?>
   </div>
     <?php elseif( get_row_layout() == 'flex_section_heading' ): ?>
    <div class="hidden bg-white md:block"></div>
    <h2
-   class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3">
+   class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3" style="width: 100%; display: block;">
             <?php the_sub_field('section_heading'); ?></h2>
     <?php elseif( get_row_layout() == 'image' ):
                     $image = get_sub_field('image');
