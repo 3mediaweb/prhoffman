@@ -91,7 +91,6 @@
     <div class="hidden bg-white md:block"></div>
   </div>
 </div>
-
     <?php if ($section_heading) : ?>
         <h2
             class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3 w-full block">
