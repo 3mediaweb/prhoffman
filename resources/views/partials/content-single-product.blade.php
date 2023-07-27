@@ -25,8 +25,7 @@
           $capacity_chart_button = get_field('capacity_chart_button_text');
           ?>
           <div class="modal-content-group-chart">
-            <button class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold button-style-link"
-            id="modal-control-chart">
+            <button class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold button-style-link" id="modal-control-chart">
         <?echo $capacity_chart_button ?>
     </button>
     <div id="modal-content-chart"
@@ -95,7 +94,7 @@
 
     <?php if ($section_heading) : ?>
         <h2
-            class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3" style="width: 100%; display: block;">
+            class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3 w-full block">
             <?php echo $section_heading ?></h2>  
     <?php endif; ?>
     <div class="hidden bg-white md:block"></div>
@@ -106,13 +105,13 @@
         while ( have_rows('single_product_flexible_content') ) : the_row();
     ?>
     <?php if( get_row_layout() == 'text' ): ?>
-   <div class="p-10 py-10 text-lg leading-6 text-gray-600" style="width: 100%; display: block;">
+   <div class="p-10 py-10 text-lg leading-6 text-gray-600 w-full block">
         <?php the_sub_field('text'); ?>
   </div>
     <?php elseif( get_row_layout() == 'flex_section_heading' ): ?>
    <div class="hidden bg-white md:block"></div>
    <h2
-   class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3" style="width: 100%; display: block;">
+   class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3 w-full block">
             <?php the_sub_field('section_heading'); ?></h2>
     <?php elseif( get_row_layout() == 'image' ):
                     $image = get_sub_field('image');
