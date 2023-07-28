@@ -202,7 +202,7 @@
                   <?php endif; ?>
                   </figure>
                 <?php elseif( get_row_layout() == 'video_embed' ): ?>
-                  <div class="aspect-w-16 aspect-h-9">
+                  <div class="aspect-w-16 aspect-h-9 w-full">
                     <?php the_sub_field('video_embed'); ?>
                   </div>
 
