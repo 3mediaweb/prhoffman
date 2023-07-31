@@ -9,67 +9,112 @@
 @include('partials.page-header')
 <?php if( have_rows('product_page_content') ): ?>
 <?php while( have_rows('product_page_content') ): the_row(); ?>
-<?php if( get_row_layout() == 'parallax_group' ): ?>
-<div class="relative overflow-hidden min-h-[500px]">
-    <div class="py-20 md:h-[60vh] min-h-[400px] md:min-h-[500px] relative">
-        <div class="absolute top-0 left-0 w-full h-full poly-clip">
-            <div class="will-change-transform h-[400px] z-10 absolute top-0 w-full opacity-90"
-                 style="background-image: linear-gradient(to top,rgba(13,22,35,0),#0d1623);"></div>
-            <div class="will-change-transform fixed top-0 left-0 block w-full h-full bg-center bg-purple z-[1] parallax-image-holder"
-                 style="background-image: url('<?php the_sub_field('pg_top_image'); ?>'); background-size: cover"></div>
-            <div class="relative z-10 px-5 pt-40 m-auto will-change-transform max-w-7xl">
-                <?php if (get_sub_field('make_h1')) : ?><h1><?php else : ?><h2><?php endif; ?>
-                        <span
-                              class="uppercase text-white text-2xl md:text-[2.375rem] text-shadow-lg leading-8 md:leading-10 pl-5 border-l-4 border-blue-300 inline-block font-semibold"><?php the_sub_field('pg_top_text'); ?></span>
-                        <?php if (get_sub_field('make_h1')) : ?></h1><?php else : ?></h2><?php endif; ?>
-            </div>
-        </div>
-    </div>
-    <div class="relative py-10 text-white md:py-20">
-        <div class="h-full overflow-hidden">
-            <div class="absolute top-0 left-0 z-0 w-full h-full poly-clip">
-                <div class="will-change-transform fixed top-0 block w-full h-full bg-center bg-cover bg-purple z-[-1] parallax-image-holder"
-                     style="background-image: url('<?php the_sub_field('pg_bottom_image'); ?>');"></div>
-            </div>
-            <div class="relative h-full px-5 m-auto overflow-hidden max-w-7xl will-change-transform">
-                <div class="uppercase text-white text-lg md:text-[1.3125rem] mb-2">
-                    <?php the_sub_field('pg_bottom_small_heading'); ?>
-                </div>
-                <span class="inline-block w-10 h-[4px] bg-blue-500 mb-5"></span>
-                <div class="relative md:pr-44 md:pl-28">
-                    <h2 class="mb-8 text-2xl md:text-3xl text-semibold"><?php the_sub_field('pg_bottom_heading'); ?>
-                    </h2>
-                    <div class="text-xl md:text-[1.375rem] mb-10"><?php the_sub_field('pg_bottom_text'); ?></div>
-                    <div class="grid max-w-2xl grid-cols-2 gap-x-2">
-                        <?php
-                    $link = get_sub_field('pg_bottom_button_1');
-                    if( $link ):
-                        $link_url = $link['url'];
-                        $link_title = $link['title'];
-                        $link_target = $link['target'] ? $link['target'] : '_self';
-                        ?>
-                        <a class="inline-flex items-center justify-center px-5 py-3 leading-tight text-center text-sm uppercase border font-semibold border-white hover:border-coral transform duration-300 hover:bg-coral hover:bg-opacity-50 hover:text-[#253f8f] max-w-[200px]"
-                           href="<?php echo esc_url( $link_url ); ?>"
-                           target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html( $link_title ); ?></span></a>
-                        <?php endif; ?>
+<?php if( get_row_layout() == 'main_product_grid' ): ?>
+<div class="w-full py-20">
+  
+       
+          
+            <div class="z-10 px-5q m-auto max-w-7xl">
+    
+                <?php
 
-                        <?php
-                    $link = get_sub_field('pg_bottom_button_2');
-                    if( $link ):
-                        $link_url = $link['url'];
-                        $link_title = $link['title'];
-                        $link_target = $link['target'] ? $link['target'] : '_self';
+               
+                if( have_rows('product_grid_block') ): ?>
+                <div class="mx-auto max-w-7xl  product-category-grid"><?php
+                
+               
+                    while( have_rows('product_grid_block') ) : the_row();
+                
+                     
+                        $product_name = get_sub_field('product_name');
+                        $product_image = get_sub_field('product_image');
+                        $image_url = $product_image['url'];
+                        $image_alt = $product_image['alt'];
+                        $product_link = get_sub_field('product_link');
+                        $product_intro = get_sub_field('product_intro');
+                        $product_description = get_sub_field ('product_description');
+
                         ?>
-                        <a class="inline-flex px-5 items-center justify-center text-center leading-tight py-1 text-sm uppercase border font-semibold hover:bg-blue-800 border-transparent transform duration-300 bg-coral hover:text-blue-400  max-w-[200px]"
-                           href="<?php echo esc_url( $link_url ); ?>"
-                           target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html( $link_title ); ?></span></a>
-                        <?php endif; ?>
-                    </div>
-                </div>
+                        <div class="product-wrapper flex flex-col justify-center bg-white mb-20 ">
+<figure class="product-image" ><img class="rounded-full aspect-w-square aspect-h-square" style="width: 300px; height: 300px; aspect-ratio: 1;" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" /></figure>
+<div class="product-content flex flex-col justify-center text-center p-4">
+<h2 class="text-purple text-1xl md:text-[1.375rem] uppercase font-semibold  w-full block"><a href="<?php echo esc_attr($product_link); ?>">
+    <?php echo esc_attr($product_name); ?></a></h2>
+    <p><b><?php echo esc_attr($product_intro); ?></b></p>
+    <p><?php echo esc_attr($product_description); ?></p>
+    <a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_attr($product_link); ?>">View Products</a>
+</div>
+</div>
+                    <?php 
+                    endwhile;
+                    ?></div><?php
+                endif;?>
+
+
+
+
+
+            </div>
+     
+</div><!--end grid -->
+<?php elseif( get_row_layout() == 'section_heading' ): ?>
+<div class="min-h-[200px]">
+  
+        <div class=" w-full ">
+       
+          
+            <div class="relative z-10 px-5 m-auto max-w-7xl">
+                <h2
+                class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3 w-full block">
+                         <?php the_sub_field('section_heading'); ?></h2>
+            </div>
+        </div>
+ 
+</div><!--end section heading -->
+
+<?php elseif( get_row_layout() == 'image_block' ): ?>
+
+    <div class="flex flex-col justify-center w-full text-center">
+        
+       
+        
+              <?php  $image = get_sub_field('image');
+            
+              $size = 'full';
+              ?>
+<figure class="text-center">
+
+  <?php echo wp_get_attachment_image( $image, $size, "", array("style" => "width: 100%") ); ?>
+ 
+</figure>
+
+       
+  
+</div><!--end image block-->
+
+<?php elseif( get_row_layout() == 'single_button_cta' ): ?>
+<div class="relative">
+    <div class="py-20 relative">
+        <div class=" w-full ">
+       
+          
+            <div class="relative z-10 px-5 m-auto max-w-7xl">
+                <?php $link = get_sub_field('cta_button_single');
+                if( $link ):
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    ?>
+<a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold"
+   href="<?php echo esc_url( $link_url ); ?>"
+   target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+   <?php endif; ?>
             </div>
         </div>
     </div>
-</div>
+</div><!--end single button cta-->
+
+
 <?php elseif( get_row_layout() == 'text_image_cta' ): ?>
 <div class="grid grid-cols-1 md:grid-cols-2">
     <div class="flex flex-wrap">
@@ -121,7 +166,7 @@
 
     <div class="w-full text-white bg-center md:bg-right bg-no-repeat <?php if ( get_sub_field('wysiwyg_background_image') ) : ?>bg-cover <? else : ?>bg-contain <?php endif; ?> "
         style="<?php if (get_sub_field('background_overlay')) : echo('background-color: grey; background-blend-mode: multiply;'); endif; ?> <?php if (get_sub_field('wysiwyg_background_image') ) : ?>background-image: url('<?php the_sub_field('wysiwyg_background_image'); ?>'); <?php endif; ?><?php if (get_sub_field('wysiwyg_background_color') ) : ?>background-color:<?php the_sub_field('wysiwyg_background_color'); endif; ?>;">
-        <div class="relative h-full px-5 m-auto overflow-hidden max-w-7xl will-change-transform">
+        <div class="relative  px-5 m-auto overflow-hidden max-w-7xl will-change-transform">
 
 
       <div class="relative md:pr-44 md:pl-28">
