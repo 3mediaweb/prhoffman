@@ -11,21 +11,11 @@
 <?php while( have_rows('product_page_content') ): the_row(); ?>
 <?php if( get_row_layout() == 'main_product_grid' ): ?>
 <div class="w-full py-20">
-  
-       
-          
             <div class="z-10 px-5q m-auto max-w-7xl">
-    
                 <?php
-
-               
                 if( have_rows('product_grid_block') ): ?>
                 <div class="mx-auto max-w-7xl  product-category-grid"><?php
-                
-               
                     while( have_rows('product_grid_block') ) : the_row();
-                
-                     
                         $product_name = get_sub_field('product_name');
                         $product_image = get_sub_field('product_image');
                         $image_url = $product_image['url'];
@@ -36,33 +26,24 @@
 
                         ?>
                         <div class="product-wrapper flex flex-col justify-center bg-white mb-20 ">
-<figure class="product-image" ><img class="rounded-full aspect-w-square aspect-h-square" style="width: 300px; height: 300px; aspect-ratio: 1;" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" /></figure>
-<div class="product-content flex flex-col justify-center text-center p-4">
-<h2 class="text-purple text-1xl md:text-[1.375rem] uppercase font-semibold  w-full block"><a href="<?php echo esc_attr($product_link); ?>">
-    <?php echo esc_attr($product_name); ?></a></h2>
-    <p><b><?php echo esc_attr($product_intro); ?></b></p>
-    <p><?php echo esc_attr($product_description); ?></p>
-    <a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_attr($product_link); ?>">View Products</a>
-</div>
-</div>
+                            <figure class="product-image" ><img class="rounded-full aspect-w-square aspect-h-square" style="width: 300px; height: 300px; aspect-ratio: 1;" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" /></figure>
+            <div class="product-content flex flex-col justify-center text-center p-4">
+                <h2 class="text-purple text-1xl md:text-[1.375rem] uppercase font-semibold  w-full block"><a href="<?php echo esc_attr($product_link); ?>">
+                <?php echo esc_attr($product_name); ?></a></h2>
+                <p><b><?php echo esc_attr($product_intro); ?></b></p>
+                <p><?php echo esc_attr($product_description); ?></p>
+                <a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_attr($product_link); ?>">View Products</a>
+            </div>
+            </div>
                     <?php 
                     endwhile;
                     ?></div><?php
                 endif;?>
-
-
-
-
-
             </div>
-     
 </div><!--end grid -->
 <?php elseif( get_row_layout() == 'section_heading' ): ?>
 <div class="min-h-[200px]">
-  
         <div class=" w-full ">
-       
-          
             <div class="relative z-10 px-5 m-auto max-w-7xl">
                 <h2
                 class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3 w-full block">
@@ -87,9 +68,6 @@
   <?php echo wp_get_attachment_image( $image, $size, "", array("style" => "width: 100%") ); ?>
  
 </figure>
-
-       
-  
 </div><!--end image block-->
 
 <?php elseif( get_row_layout() == 'single_button_cta' ): ?>
@@ -159,7 +137,27 @@
     </div>
 </div>
 
-<!--start my stuff -->
+<!-- end text/image with cta -->
+
+<?php elseif( get_row_layout() == 'text_image_lr' ): ?>
+
+<div class="grid grid-cols-1 lg:grid-cols-2">
+    <?php $bg = get_sub_field('product_ti_image'); ?>
+    <div class="h-[300px] lg:h-auto bg-center bg-cover <?php if ( get_sub_field('product_ti_image_align') == 'right' ) : ?> lg:order-2<?php endif; ?>" style="background-image: url('<?php echo $bg; ?>')"></div>
+    <div class="bg-[#AAA29F] bg-opacity-10 p-5 md:p-14 cb">
+      <div class="text-gray-600 md:max-w-2xl"><?php the_sub_field('product_ti_text'); ?></div>
+      <?php
+      $link = get_sub_field('product_ti_featured_link');
+      if( $link ):
+          $link_url = $link['url'];
+          $link_title = $link['title'];
+          $link_target = $link['target'] ? $link['target'] : '_self';
+          ?>
+          <a class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+      <?php endif; ?>
+    </div>
+  </div>
+
 <?php elseif( get_row_layout() == 'simple_wysiwyg' ): ?>
 <div class="grid grid-cols-1 md:grid-cols-1">
   <div class="flex flex-wrap">
