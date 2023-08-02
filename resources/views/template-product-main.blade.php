@@ -36,7 +36,7 @@
                 <p><?php echo esc_attr($product_description); ?></p>
                
             </div>
-            <a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_attr($product_link); ?>"><?php echo($product_link_text); ?></a>
+            <a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white text-center uppercase font-bold" href="<?php echo esc_attr($product_link); ?>"><?php echo($product_link_text); ?></a>
             </div>
                     <?php 
                     endwhile;
