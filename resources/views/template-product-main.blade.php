@@ -29,8 +29,8 @@
                         <div class="product-wrapper flex flex-col justify-center bg-white mb-20 " style=" justify-content: space-between; ">
                             
             <div class="product-content flex flex-col justify-center text-center p-4">
-                <figure class="product-image" ><img class="rounded-full aspect-w-square aspect-h-square" style="width: 300px; height: 300px; aspect-ratio: 1;" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" /></figure>
-                <h2 class="text-purple pt-20 text-1xl md:text-[1.375rem] uppercase font-semibold  w-full block"><a href="<?php echo esc_attr($product_link); ?>">
+                <figure class="product-image"><img class="rounded-full aspect-w-square aspect-h-square" style="width: 300px; height: 300px; aspect-ratio: 1;" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" /></figure>
+                <h2 class="text-purple py-2 text-1xl md:text-[1.375rem] uppercase font-semibold  w-full block" style="margin-top: 30px;"><a href="<?php echo esc_attr($product_link); ?>">
                 <?php echo esc_attr($product_name); ?></a></h2>
                 <p><b><?php echo esc_attr($product_intro); ?></b></p>
                 <p><?php echo esc_attr($product_description); ?></p>
@@ -156,7 +156,7 @@
           $link_title = $link['title'];
           $link_target = $link['target'] ? $link['target'] : '_self';
           ?>
-          <a class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+          <a class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold" style="color: white" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
       <?php endif; ?>
     </div>
   </div>
