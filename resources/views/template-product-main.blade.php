@@ -45,9 +45,9 @@
             </div>
 </div><!--end grid -->
 <?php elseif( get_row_layout() == 'section_heading' ): ?>
-<div class="min-h-[200px] py-6">
+<div class="min-h-[200px] py-20">
         <div class=" w-full ">
-            <div class="relative z-10 pt-20 pb-20 px-5 m-auto max-w-7xl">
+            <div class="relative z-10 pt-30 pb-10 px-5 m-auto max-w-7xl">
                 <h2
                 class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3 w-full block">
                          <?php the_sub_field('section_heading'); ?></h2>
