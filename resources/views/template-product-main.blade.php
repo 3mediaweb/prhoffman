@@ -26,7 +26,7 @@
                         $product_link_text = get_sub_field('product_link_text');
 
                         ?>
-                        <div class="product-wrapper flex flex-col justify-center bg-white mb-20 " style="height: 100%; justify-content: space-between; ">
+                        <div class="product-wrapper flex flex-col justify-center bg-white mb-20 " style=" justify-content: space-between; ">
                             
             <div class="product-content flex flex-col justify-center text-center p-4">
                 <figure class="product-image" ><img class="rounded-full aspect-w-square aspect-h-square" style="width: 300px; height: 300px; aspect-ratio: 1;" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" /></figure>
