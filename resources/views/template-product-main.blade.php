@@ -6,7 +6,7 @@
 
 @section('content')
 @while(have_posts()) @php(the_post())
-@include('partials.page-header')
+@include('partials.product-header')
 <?php if( have_rows('product_page_content') ): ?>
 <?php while( have_rows('product_page_content') ): the_row(); ?>
 <?php if( get_row_layout() == 'main_product_grid' ): ?>
@@ -14,7 +14,7 @@
             <div class="z-10 px-5q m-auto max-w-7xl">
                 <?php
                 if( have_rows('product_grid_block') ): ?>
-                <div class="mx-auto max-w-7xl  product-category-grid"><?php
+                <div class="mx-auto max-w-7xl  product-main-grid"><?php
                     while( have_rows('product_grid_block') ) : the_row();
                         $product_name = get_sub_field('product_name');
                         $product_image = get_sub_field('product_image');
@@ -23,17 +23,20 @@
                         $product_link = get_sub_field('product_link');
                         $product_intro = get_sub_field('product_intro');
                         $product_description = get_sub_field ('product_description');
+                        $product_link_text = get_sub_field('product_link_text');
 
                         ?>
-                        <div class="product-wrapper flex flex-col justify-center bg-white mb-20 ">
-                            <figure class="product-image" ><img class="rounded-full aspect-w-square aspect-h-square" style="width: 300px; height: 300px; aspect-ratio: 1;" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" /></figure>
+                        <div class="product-wrapper flex flex-col justify-center bg-white mb-20 " style="height: 100%; justify-content: space-between; ">
+                            
             <div class="product-content flex flex-col justify-center text-center p-4">
-                <h2 class="text-purple text-1xl md:text-[1.375rem] uppercase font-semibold  w-full block"><a href="<?php echo esc_attr($product_link); ?>">
+                <figure class="product-image" ><img class="rounded-full aspect-w-square aspect-h-square" style="width: 300px; height: 300px; aspect-ratio: 1;" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" /></figure>
+                <h2 class="text-purple pt-20 text-1xl md:text-[1.375rem] uppercase font-semibold  w-full block"><a href="<?php echo esc_attr($product_link); ?>">
                 <?php echo esc_attr($product_name); ?></a></h2>
                 <p><b><?php echo esc_attr($product_intro); ?></b></p>
                 <p><?php echo esc_attr($product_description); ?></p>
-                <a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_attr($product_link); ?>">View Products</a>
+               
             </div>
+            <a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold" href="<?php echo esc_attr($product_link); ?>"><?php echo($product_link_text); ?></a>
             </div>
                     <?php 
                     endwhile;
@@ -42,9 +45,9 @@
             </div>
 </div><!--end grid -->
 <?php elseif( get_row_layout() == 'section_heading' ): ?>
-<div class="min-h-[200px]">
+<div class="min-h-[200px] py-6">
         <div class=" w-full ">
-            <div class="relative z-10 px-5 m-auto max-w-7xl">
+            <div class="relative z-10 pt-20 pb-20 px-5 m-auto max-w-7xl">
                 <h2
                 class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3 w-full block">
                          <?php the_sub_field('section_heading'); ?></h2>
@@ -169,7 +172,7 @@
 
       <div class="relative md:pr-44 md:pl-28">
                  
-                  <div class="text-xl md:text-[1.375rem] mb-10" style="padding: 3rem 0 0 0;">
+                  <div class="text-xl md:text-[1.375rem] mb-10" style="padding: 3rem 0 0 0; <?php if (get_sub_field('wysiwyg_text_color')) : ?>color: <?php echo the_sub_field('wysiwyg_text_color'); endif; ?>">
             <?php the_sub_field('simple_wysisyg_content'); ?>
        
         </div>
