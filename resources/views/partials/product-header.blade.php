@@ -1,5 +1,5 @@
 <?php $bg = get_field('page_hero_image'); 
-$title = get_the_title();
+
 ?>
 
 <section class="bg-center bg-cover min-h-[250px] md:h-[250px]" <?php if ($bg) : ?>style="background-image: url(<?php echo $bg; ?>);"<?php endif; ?>>

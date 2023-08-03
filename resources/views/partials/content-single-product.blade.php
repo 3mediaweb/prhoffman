@@ -19,32 +19,16 @@
       ?>
         
          <div class="pr-5 text-base leading-6 text-gray-600 md:text-lg cb md:max-w-3xl md:pr-0 sidebar-button-group">
-          <?php 
-          $capacity_chart_window = get_field('capacity_chart_window_content');
-          if( $capacity_chart_window ): 
-          $capacity_chart_button = get_field('capacity_chart_button_text');
-          ?>
-          <div class="modal-content-group-chart">
-            <button class="bg-[#BFC1C3] button py-2 px-5 mt-5 inline-block text-white uppercase font-bold button-style-link" id="modal-control-chart">
-        <?echo $capacity_chart_button ?>
-    </button>
-    <div id="modal-content-chart"
-                         class="modal-chart fixed top-0 bottom-0 left-0 right-0 z-50 pt-24 bg-black modal bg-opacity-70">
-                        <div class="modal-content-wrap relative mx-auto bg-white w-full border-[3px] border-coral rounded-md p-8 pt-10" style="width: 90%;">
-                            <span class="modal-close-chart absolute top-[20px] right-[20px]"><svg width="20"
-                              height="20"
-                              xmlns="http://www.w3.org/2000/svg">
-                             <path d="m17.411 0-7.399 7.399L2.589 0 0 2.589l7.424 7.399L0 17.411 2.589 20l7.423-7.424L17.411 20 20 17.411l-7.399-7.423L20 2.589z"
-                                   fill="#000"
-                                   fill-rule="nonzero" />
-                         </svg></span>
-                            <p><?php echo( $capacity_chart_window ); ?></p>
-                        </div>
-                    </div>
-
-          </div>
-
-          <?php endif ?>
+          <?php $link = get_field('capacity_chart_button');
+          if( $link ):
+              $link_url = $link['url'];
+              $link_title = $link['title'];
+              $link_target = $link['target'] ? $link['target'] : '_self';
+              ?>
+<a class="button bg-[#BFC1C3] py-2 px-5 mt-5 inline-block text-white uppercase font-bold"
+href="<?php echo esc_url( $link_url ); ?>"
+target="<?php echo esc_attr( $link_target ); ?>" style="color: white; text-decoration: none;">Capacity Chart</a>
+<?php endif; ?>
 
           <?php
           $form = get_field('product_brochure_form');
@@ -112,6 +96,7 @@
    <h2
    class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3 w-full block">
             <?php the_sub_field('section_heading'); ?></h2>
+    
     <?php elseif( get_row_layout() == 'image' ):
                     $image = get_sub_field('image');
                     $alignment = get_sub_field('image_alignment');
@@ -125,8 +110,9 @@
       </div>
         <?php else : ?>
         <?php echo wp_get_attachment_image( $image, $size ); ?>
-        <?php endif; ?>
+        
     </figure>
+    <?php endif; ?>
     <?php elseif( get_row_layout() == 'video_embed' ): ?>
 <div class="aspect-w-16 aspect-h-9 w-full">
         <?php the_sub_field('video_embed'); ?>
