@@ -7,6 +7,7 @@
     class="text-purple text-2xl md:text-[2.375rem] uppercase font-semibold mb-4 pl-5 md:pl-10 border-l-4 border-coral pt-3">
     Capacity Chart - <?php echo $product_name ?></h2>
   
-   <div class="relative mx-auto bg-white w-full  p-8 pt-10" style="width: 90%;">
+   <div class="relative mx-auto bg-white w-full  p-8 pt-10">
       <?php the_content(); ?>
     </div>
+</div>
