@@ -1,8 +1,16 @@
 <article @php(post_class('flex flex-wrap mb-20 border border-coral')) style="padding-bottom: 1.2rem;">
     <div class="product-image">
-   
+
       <?php if ( has_post_thumbnail() ) : ?>
+      <?php $image_link = get_field('product_image_link'); ?>
+      <?php if ($image_link) : ?><a href="<?php echo $image_link; ?>">
+      <?php else: ?><a href="{{ get_permalink() }}">
+        <?php endif; ?>
+     
+
           <?php the_post_thumbnail(); ?>
+      </a>
+     
       <?php endif; ?>
     </div>
   
@@ -11,7 +19,8 @@
 
       <?php
 
-// Check rows existexists.
+
+
 if( have_rows('product_list_items') ): ?>
 <ul class="product-detail-list">
    <?php
