@@ -83,6 +83,32 @@
             <?php endif; ?>
           </div>
         </div>
+        <!-- start simple wysiwyg band -->
+        <?php elseif( get_row_layout() == 'simple_wysiwyg' ): ?>
+<div class="grid grid-cols-1 md:grid-cols-1">
+    <div class="flex flex-wrap">
+
+        <div class="w-full text-white bg-center md:bg-right bg-no-repeat <?php if ( get_sub_field('wysiwyg_background_image') ) : ?>bg-cover <? else : ?>bg-contain <?php endif; ?> "
+             style="<?php if (get_sub_field('background_overlay')) : echo('background-color: grey; background-blend-mode: multiply;'); endif; ?> <?php if (get_sub_field('wysiwyg_background_image') ) : ?>background-image: url('<?php the_sub_field('wysiwyg_background_image'); ?>'); <?php endif; ?><?php if (get_sub_field('wysiwyg_background_color') ) : ?>background-color:<?php the_sub_field('wysiwyg_background_color'); endif; ?>;">
+            <div class="relative  px-5 m-auto overflow-hidden max-w-7xl will-change-transform">
+
+
+                <div class="relative md:pr-44 md:pl-28">
+
+                    <div class="text-xl md:text-[1.375rem] mb-10"
+                         style="padding: 3rem 0 0 0; <?php if (get_sub_field('wysiwyg_text_color')) : ?>color: <?php echo the_sub_field('wysiwyg_text_color'); endif; ?>">
+                        <?php the_sub_field('simple_wysisyg_content'); ?>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end simple wysiwyg band -->
 
       <?php elseif( get_row_layout() == 'text_w_blue_background' ): ?>
         <?php $bg = get_sub_field('company_tb_background_image'); ?>
