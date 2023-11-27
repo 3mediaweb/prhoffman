@@ -13,6 +13,9 @@
       <div class="flex justify-center md:justify-end">
         <a href="https://www.btu.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="BTU" src="@asset('assets/images/logo-BTU.png')" /></a>
       </div>
+      <div class="flex justify-center md:justify-end">
+        <a href="https://www.entrepix.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="BTU" src="@asset('assets/images/entrepix-logo.png')" /></a>
+      </div>
     </div>
   </div>
   <div class="col-span-3 bg-gray-300">
@@ -47,6 +50,7 @@
       </div>
       <div class="w-full bg-white md:w-1/3">
         <div class="px-12 py-10 md:pb-32">
+          <div class="md:pb-20">
           <div class="uppercase text-[#274488] font-bold mb-10 text-lg">
             <?php bloginfo( 'description' ); ?>
           </div>
@@ -59,6 +63,7 @@
             <li>Fax: <?php the_field('contact_fax', 'option') ; ?></li>
           </ul>
         </div>
+      </div>
       </div>
     </div>
     <div class="flex flex-wrap justify-center px-5 py-4 pr-2 text-white md:justify-start md:pl-12 bg-purple">
