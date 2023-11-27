@@ -14,7 +14,7 @@
         <a href="https://www.btu.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="BTU" src="@asset('assets/images/logo-BTU.png')" /></a>
       </div>
       <div class="flex justify-center md:justify-end">
-        <a href="https://www.entrepix.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Entrepix" src="@asset('assets/images/entrepix-logo.png')" /></a>
+        <a href="https://www.entrepix.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Entrepix" src="@asset('assets/images/entrepix-logo.143ec2.png')" /></a>
       </div>
     </div>
   </div>
