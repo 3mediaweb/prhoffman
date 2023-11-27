@@ -17,10 +17,7 @@
           <h2 class="px-3 py-1 bg-[#BFC1C3] uppercase text-lg font-bold text-white">Contact Info</h2>
           <?php the_field('contact_general_contact_info'); ?>
         </div>
-        <div>
-          <h2 class="px-3 py-1 bg-[#BFC1C3] uppercase text-lg font-bold text-white">Sales Team</h2>
-          <?php the_field('contact_sales_team'); ?>
-        </div>
+    
       </div>
     </div>
     <div class="p-20 text-white bg-no-repeat md:pl-48 bg-coral" style="background-image: url(@asset('assets/images/product-hero-lineart.png')); background-size: 375px 284px; background-position: -75px 0">
