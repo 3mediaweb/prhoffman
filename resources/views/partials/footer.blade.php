@@ -28,7 +28,7 @@
           <div class="mr-0 font-bold leading-tight text-center md:text-left lg:mr-14">
             <div>Products</div>
             <ul class="mt-5 font-normal text-gray-600">
-              <li class="mb-2"><a href="/machines/">Machines</a></li>
+              <li class="mb-2"><a href="/product-category/polishing-machines/">Machines</a></li>
               <li class="mb-2"><a href="/carriers/">Carriers</a></li>
               <li class="mb-2"><a href="/polishing-fixtures/">Polishing Fixtures</a></li>
             </ul>
