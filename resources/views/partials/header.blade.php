@@ -1,7 +1,7 @@
 <header class="relative z-50 overflow-hidden">
   <div class="top-0 left-0 right-0 flex flex-col bg-black fixed nav:items-center nav:flex-row">
-    <a class="flex items-center p-5 nav:justify-center grad-diag-blue" href="{{ home_url('/') }}">
-      <img class="w-[240px]" alt="PR Hoffman" src="@asset('assets/images/logo.png')" />
+    <a class="flex items-center p-5 nav:justify-center bg-black" href="{{ home_url('/') }}">
+      <img class="w-[240px]" alt="PR Hoffman" src="@asset('assets/images/logo-2024.1.png')" />
     </a>
 
     <button class="nav:hidden absolute top-[25px] right-[10px] text-white" @click.prevent="mobileNavOpen = !mobileNavOpen">
