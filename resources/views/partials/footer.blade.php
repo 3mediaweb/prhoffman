@@ -1,21 +1,26 @@
 <footer class="grid clear-both grid-cols-1 md:grid-cols-4">
   <div class="flex flex-wrap col-span-1">
-    <div class="w-full py-10 pl-8 grad-diag-blue">
+    <div class="w-full pt-10 pl-8 grad-diag-blue">
+
       <div class="flex justify-center mb-5 md:justify-end">
-        <img class="w-[294px] self-start pr-8" alt="PR Hoffman" src="@asset('assets/images/logo.png')" />
-      </div>
-      <div class="flex justify-center mb-5 md:justify-end">
-        <a href="https://www.isurface.com"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Intersurface Dynamics" src="@asset('assets/images/logo-id.png')" /></a>
-      </div>
-      <div class="flex justify-center mb-5 md:justify-end">
-        <a href="https://www.amtechsystems.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Amtech Group" src="@asset('assets/images/amtech-group.png')" /></a>
+        <a href="https://www.amtechsystems.com/"><img class="w-[294px] self-start pr-8" alt="Amtech Group" src="@asset('assets/images/AMTECH-2024-1.png')" /></a>
       </div>
       <div class="flex justify-center md:justify-end">
-        <a href="https://www.btu.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="BTU" src="@asset('assets/images/logo-BTU.png')" /></a>
+        <a href="https://www.btu.com/"><img class="w-[200px] self-start pt-5 pb-5 pr-10 border-t-2 border-coral" alt="BTU" src="@asset('assets/images/BTU-2024-2.png')" /></a>
       </div>
       <div class="flex justify-center md:justify-end">
-        <a href="https://www.entrepix.com/"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Entrepix" src="@asset('assets/images/entrepix.png')" /></a>
+        <a href="https://www.entrepix.com/"><img class="w-[200px] self-start pb-5 pt-5 pr-10 border-t-2 border-coral" alt="Entrepix" src="@asset('assets/images/ENTREPIX-2024-3.png')" /></a>
       </div>
+
+      <div class="flex justify-center mb-5 md:justify-end">
+        <img class="w-[200px] self-start self-start pt-5 pr-10 border-t-2 border-coral" alt="PR Hoffman" src="@asset('assets/images/PRHOFFMAN-2024-4.png')" />
+      </div>
+      <div class="flex justify-center mb-5 md:justify-end">
+        <a href="https://www.isurface.com"><img class="w-[200px] self-start pt-5 pr-10 border-t-2 border-coral" alt="Intersurface Dynamics" src="@asset('assets/images/ID-2024-5.png')" /></a>
+      </div>
+     
+     
+      
     </div>
   </div>
   <div class="col-span-3 bg-gray-300">
