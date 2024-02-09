@@ -73,11 +73,11 @@
 .product-nav::after {
   @apply w-5 h-1 bg-blue-500 content-[''] block;
 }
-
+/*
 .prod-hero-grad {
   background-image: url('../images/product-hero-lineart.png');
 }
-
+*/
 .custom-form .gform_wrapper.gravity-theme input[type='text'],
 .custom-form .gform_wrapper.gravity-theme input[type='email'],
 .custom-form .gform_wrapper.gravity-theme input[type='tel'],
