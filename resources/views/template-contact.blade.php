@@ -64,7 +64,7 @@
 
 
   <div class="grid grid-cols-1 md:grid-cols-2">
-    <div class="p-20 text-3xl font-semibold text-white bg-no-repeat md:pl-48 bg-coral" style="background-image: url(@asset('assets/images/product-hero-lineart.png')); background-size: 375px 284px; background-position: -75px 0">
+    <div class="p-20 text-3xl font-semibold text-white bg-no-repeat md:pl-48 bg-coral">
       <h2 class="uppercase"><?php the_field('careers_heading'); ?></h2>
       <span class="inline-block w-10 h-[4px] bg-white mb-5"></span>
       <div class="mt-5"><?php the_field('contact_careers_text'); ?></div>
