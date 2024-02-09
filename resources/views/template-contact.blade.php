@@ -20,7 +20,7 @@
     
       </div>
     </div>
-    <div class="p-20 text-white bg-no-repeat md:pl-48 bg-coral" style="background-image: url(@asset('assets/images/product-hero-lineart.png')); background-size: 375px 284px; background-position: -75px 0">
+    <div class="p-20 text-white bg-no-repeat md:pl-48 bg-coral">
       <div class="max-w-2xl text-3xl font-semibold">
         <?php the_field('contact_general_contact_text'); ?>
       </div>
