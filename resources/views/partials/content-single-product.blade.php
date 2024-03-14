@@ -89,7 +89,9 @@ target="<?php echo esc_attr( $link_target ); ?>" style="color: white; text-decor
     ?>
     <?php if( get_row_layout() == 'text' ): ?>
    <div class="p-10 py-10 text-lg leading-6 text-gray-600 w-full block">
-        <?php the_sub_field('text'); ?>
+        <?php 
+        echo wp_kses_post( get_sub_field('text') ); ?>
+        
   </div>
     <?php elseif( get_row_layout() == 'flex_section_heading' ): ?>
    <div class="hidden bg-white md:block"></div>

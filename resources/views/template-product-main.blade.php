@@ -148,7 +148,9 @@
     <?php $bg = get_sub_field('product_ti_image'); ?>
     <div class="h-[300px] lg:h-auto bg-center bg-cover <?php if ( get_sub_field('product_ti_image_align') == 'right' ) : ?> lg:order-2<?php endif; ?>" style="background-image: url('<?php echo $bg; ?>')"></div>
     <div class="bg-[#AAA29F] bg-opacity-10 p-5 md:p-14 cb">
-      <div class="text-gray-600 md:max-w-2xl"><?php the_sub_field('product_ti_text'); ?></div>
+      <div class="text-gray-600 md:max-w-2xl"><?php 
+      
+      echo wp_kses_post( get_sub_field('product_ti_text') );?></div>
       <?php
       $link = get_sub_field('product_ti_featured_link');
       if( $link ):

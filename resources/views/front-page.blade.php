@@ -15,7 +15,11 @@
             <div class="relative z-10 px-5 pt-40 m-auto will-change-transform max-w-7xl">
                 <?php if (get_sub_field('make_h1')) : ?><h1><?php else : ?><h2><?php endif; ?>
                         <span
-                              class="uppercase text-white text-2xl md:text-[2.375rem] text-shadow-lg leading-8 md:leading-10 pl-5 border-l-4 border-blue-300 inline-block font-semibold"><?php the_sub_field('pg_top_text'); ?></span>
+                              class="uppercase text-white text-2xl md:text-[2.375rem] text-shadow-lg leading-8 md:leading-10 pl-5 border-l-4 border-blue-300 inline-block font-semibold"><?php 
+                            
+                              echo wp_kses_post( get_sub_field('pg_top_text') );?>
+                            
+                            </span>
                         <?php if (get_sub_field('make_h1')) : ?></h1><?php else : ?></h2><?php endif; ?>
             </div>
         </div>
